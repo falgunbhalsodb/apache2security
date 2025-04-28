@@ -111,7 +111,7 @@ cat <<EOT > /etc/apache2/conf-available/disable-scripts.conf
     Require all granted
 </Directory>
 
-<FilesMatch "\.(php|pl|py|cgi|sh|rb)$">
+<FilesMatch "\.(pl|py|cgi|sh|rb)$">
     Require all denied
 </FilesMatch>
 EOT
