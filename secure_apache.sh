@@ -73,7 +73,10 @@ cat <<EOT > /etc/apache2/mods-available/evasive.conf
     DOSBlockingPeriod   86400
     DOSEmailNotify      you@example.com
     DOSLogDir           "/var/log/mod_evasive"
+    ###YPOFFICEA
     DOSWhitelist        122.173.87.214
+    ###VARIS OFFICE
+    DOSWhitelist        106.201.234.176
 </IfModule>
 EOT
 
