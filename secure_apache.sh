@@ -83,27 +83,27 @@ EOT
 a2enmod evasive
 
 # 7. Auto block IPs with fail2ban (optional but recommended)
-echo "Installing and configuring fail2ban for better IP banning..."
-apt-get install -y fail2ban
+#echo "Installing and configuring fail2ban for better IP banning..."
+#apt-get install -y fail2ban
+#
+#cat <<EOT > /etc/fail2ban/jail.d/apache-dos.conf
+#[apache-dos]
+#enabled = true
+#port    = http,https
+#filter  = apache-dos
+#logpath = /var/log/apache2/access.log
+#maxretry = 10
+#findtime = 60
+#bantime = 86400
+#EOT
 
-cat <<EOT > /etc/fail2ban/jail.d/apache-dos.conf
-[apache-dos]
-enabled = true
-port    = http,https
-filter  = apache-dos
-logpath = /var/log/apache2/access.log
-maxretry = 10
-findtime = 60
-bantime = 86400
-EOT
+#cat <<EOT > /etc/fail2ban/filter.d/apache-dos.conf
+#[Definition]
+#failregex = <HOST>.*"(GET|POST).*
+#ignoreregex =
+#EOT
 
-cat <<EOT > /etc/fail2ban/filter.d/apache-dos.conf
-[Definition]
-failregex = <HOST>.*"(GET|POST).*
-ignoreregex =
-EOT
-
-systemctl restart fail2ban
+#systemctl restart fail2ban
 
 # 8. Disable script execution globally (only allow manually if needed)
 echo "Blocking all script execution globally..."
