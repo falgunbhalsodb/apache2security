@@ -27,7 +27,7 @@ cat <<EOT > /etc/apache2/mods-available/evasive.conf
     DOSBlockingPeriod   86400
 
     DOSLogDir           "/var/log/mod_evasive"
-    DOSEmailNotify      your-email@example.com
+    DOSEmailNotify      falgun@yellowpanther.co.uk
     DOSSystemCommand    "iptables -I INPUT -s %s -j DROP"
     DOSWhitelist        127.0.0.1
     DOSWhitelist        122.173.87.214
