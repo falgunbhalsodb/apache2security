@@ -19,9 +19,9 @@ echo "Configuring mod_evasive settings..."
 # Create evasive config file
 cat <<EOT > /etc/apache2/mods-available/evasive.conf
 <IfModule mod_evasive20.c>
-    DOSHashTableSize    3097
-    DOSPageCount        2
-    DOSSiteCount        50
+    DOSHashTableSize    1024
+    DOSPageCount        10
+    DOSSiteCount        100
     DOSPageInterval     1
     DOSSiteInterval     1
     DOSBlockingPeriod   86400
@@ -30,8 +30,8 @@ cat <<EOT > /etc/apache2/mods-available/evasive.conf
     DOSEmailNotify      falgun@yellowpanther.co.uk
     DOSSystemCommand    "iptables -I INPUT -s %s -j DROP"
     DOSWhitelist        127.0.0.1
-    DOSWhitelist        122.173.87.214
-    DOSWhitelist        106.201.234.176
+    DOSWhitelist        110.226.124.195
+    DOSWhitelist        45.116.56.130
 </IfModule>
 EOT
 
